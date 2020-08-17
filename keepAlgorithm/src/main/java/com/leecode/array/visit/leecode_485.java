@@ -1,4 +1,4 @@
-package com.leecode.array;
+package com.leecode.array.visit;
 /**
  * 485. 最大连续1的个数 难度：简单
 给定一个二进制数组， 计算其中最大连续1的个数。

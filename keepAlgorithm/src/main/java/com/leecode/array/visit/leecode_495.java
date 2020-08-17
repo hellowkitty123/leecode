@@ -1,4 +1,4 @@
-package com.leecode.array;
+package com.leecode.array.visit;
 
 /**
  * 495. 提莫攻击 难度：中等
