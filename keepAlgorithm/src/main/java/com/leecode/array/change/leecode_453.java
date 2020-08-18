@@ -18,10 +18,24 @@ package com.leecode.array.change;
  * 只需要3次移动（注意每次移动会增加两个元素的值）：
  *
  * [1,2,3]  =>  [2,3,3]  =>  [3,4,3]  =>  [4,4,4]
- *
+ * 方法三：利用排序 【通过】
+ * 方法四：动态规划 【通过
+ * 方法六：改进的数学法 【通过】
  */
 public class leecode_453 {
     public static void main(String[] args) {
-
+        int[] arr = {1,2,3,4};
+        int move = funcOne(arr);
+        System.out.println(move);
+    }
+    private static int funcOne(int[] arr){
+        int move =0,min= Integer.MAX_VALUE;
+        for (int i:arr){
+            if (i<min) min = i;
+        }
+        for (int i:arr){
+            move += i-min;
+        }
+        return move;
     }
 }
