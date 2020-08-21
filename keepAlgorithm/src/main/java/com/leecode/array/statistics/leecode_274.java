@@ -1,5 +1,8 @@
 package com.leecode.array.statistics;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * 274. H 指数 难度：中等
  * 给定一位研究者论文被引用次数的数组（被引用次数是非负整数）。编写一个方法，计算出研究者的 h 指数。
@@ -19,9 +22,31 @@ package com.leecode.array.statistics;
  *  
  *
  * 提示：如果 h 有多种可能的值，h 指数是其中最大的那个。
+ *
+ * 桶排序法
  */
 public class leecode_274 {
     public static void main(String[] args) {
+        int[] arr = {3,0,6,1,5};
+        int h = funcOne(arr);
+        System.out.println(h);
+    }
 
+    private static int funcOne(int[] arr) {
+
+        int[] tong = new int[arr.length + 1];
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] > arr.length-1) {
+                tong[tong.length-1] += 1;
+            } else {
+                tong[i] += 1;
+            }
+        }
+        int h = 0;
+        for (int i = tong.length-1; i >= 0; i--) {
+            if (i <= h) return h;
+            h =h+ tong[i];
+        }
+        return 0;
     }
 }
