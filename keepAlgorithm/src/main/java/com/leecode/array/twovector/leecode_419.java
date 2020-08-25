@@ -1,4 +1,7 @@
 package com.leecode.array.twovector;
+
+import java.util.ArrayList;
+
 /**
  * 419. 甲板上的战舰
  * 给定一个二维的甲板， 请计算其中有多少艘战舰。 战舰用 'X'表示，空位用 '.'表示。 你需要遵守以下规则：
@@ -27,6 +30,24 @@ package com.leecode.array.twovector;
 public class leecode_419 {
 
     public static void main(String[] args) {
-
+        String[][] arr =  { {"X",".",".","X"},
+                            {".","X",".","X"},
+                            {".","X",".","X"},
+                            {"X",".",".","X"},
+                         } ;
+        int num = funcOne(arr);
+        System.out.println(num);
+    }
+    private static int  funcOne(String[][] arr){
+        int num = 0;
+        for (int col=0;col<arr.length;col++){
+            for (int row=0;row<arr[0].length;row++){
+                if (arr[col][row].equals(".")) continue;
+                if (col>0 && arr[col - 1][row].equals("X")) continue;
+                if (row>0 && arr[col][row - 1].equals("X"))continue;
+                num ++;
+            }
+        }
+        return num;
     }
 }

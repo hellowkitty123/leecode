@@ -1,4 +1,8 @@
 package com.leecode.array.twovector;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
 /**
  * 118. 杨辉三角
  * 给定一个非负整数 numRows，生成杨辉三角的前 numRows 行。
@@ -21,6 +25,33 @@ package com.leecode.array.twovector;
 public class leecode_118 {
 
     public static void main(String[] args) {
+        int numRows = 5;
+        ArrayList<ArrayList<Integer>> yanghui = funcOne(numRows);
+        for (ArrayList<Integer> cell : yanghui){
 
+
+            System.out.println(Arrays.toString(cell.toArray()));
+        }
+    }
+    private static ArrayList<ArrayList<Integer>> funcOne(int numRows){
+        ArrayList<ArrayList<Integer>> yanghui = new ArrayList<ArrayList<Integer>>();
+        for (int i=0;i<numRows;i++){
+            ArrayList<Integer> cell = new ArrayList<Integer>();
+            if (i == 0) {
+                cell.add(1);
+            }else{
+                for (int j=0;j<i+1;j++) {
+                    //   4  3  4
+                    int size = yanghui.get(i - 1).size();
+                    ArrayList<Integer> precell = yanghui.get(i - 1);
+                    int left = j - 1 >=0 ? precell.get(j - 1):0;
+                    int right = size <= j ? 0 : precell.get(j);
+
+                    cell.add(left + right);
+                }
+            }
+            yanghui.add(cell);
+        }
+        return yanghui;
     }
 }
