@@ -1,4 +1,4 @@
-package com.leecode.array.twovector;
+package com.leecode.array.twovector.base;
 
 import java.util.ArrayList;
 import java.util.Arrays;
