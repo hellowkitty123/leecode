@@ -40,6 +40,20 @@ package com.leecode.array.twovector;
 public class leecode_598 {
 
     public static void main(String[] args) {
-
+        int[][] arr = {{2,2},
+                       {3,3},
+                       {1,4}
+                      };
+        int result = funcOne(arr);
+        System.out.println(result);
+    }
+    private static int funcOne(int[][] arr){
+        int m = 0;
+        int n = 0;
+        for (int[] opt : arr){
+            m = Math.min(m,opt[0]);
+            n = Math.min(n,opt[1]);
+        }
+        return m*n;
     }
 }
