@@ -1,4 +1,7 @@
 package com.leecode.array.twovector.change;
+
+import java.util.Arrays;
+
 /**
  * 48. 旋转图像
  *给定一个 n × n 的二维矩阵表示一个图像。
@@ -44,6 +47,34 @@ package com.leecode.array.twovector.change;
  */
 public class leecode_48 {
     public static void main(String[] args) {
-
+        int[][] arr = {
+                {5, 1, 9,11},
+                {2, 4, 8,10},
+                {13, 3, 6, 7},
+                {15,14,12,16}
+        };
+        int[][] result = funcOne(arr);
+        for (int i = 0;i<result.length;i++) {
+            System.out.println(Arrays.toString(result[i]));
+        }
+    }
+    private static int[][] funcOne(int[][] arr){
+        //先转置
+        for (int i=0;i<arr.length;i++){
+            for (int j=i;j<arr.length;j++){
+                int temp = arr[i][j];
+                arr[i][j] = arr[j][i];
+                arr[j][i] = temp;
+            }
+        }
+        //先翻转 翻转到中间，否则会赚回来
+        for (int i=0;i<arr.length;i++) {
+            for (int j = 0; j < arr.length/2; j++) {
+                int temp = arr[i][j];
+                arr[i][j] = arr[i][arr.length-j-1];
+                arr[i][arr.length-j-1] = temp;
+            }
+        }
+        return arr;
     }
 }

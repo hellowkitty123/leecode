@@ -1,4 +1,7 @@
 package com.leecode.array.twovector.change;
+
+import java.util.Arrays;
+
 /**
  *
  * 289. 生命游戏
@@ -41,6 +44,50 @@ package com.leecode.array.twovector.change;
  */
 public class leecode_289 {
     public static void main(String[] args) {
-
+        int[][] arr = {
+                {0,1,0},    //{5, 0, 9,0}
+                {0,0,1},   //{0, 0, 13,15}
+                {1,1,1},
+                {0,0,0}
+        };
+        int[][] result = funcOne(arr);
+        for (int i = 0;i<result.length;i++) {
+            System.out.println(Arrays.toString(result[i]));
+        }
+    }
+    private static int[][] funcOne(int[][] arr){
+        for (int i=0;i<arr.length;i++){
+            for (int j=0;j<arr[0].length;j++){
+                int temp = 0;
+                for (int m=-1;m<=1;m++){
+                    for (int n=-1;n<=1;n++){
+                        if (i+m >=0 && i+m<arr.length && j+n>=0 && j+n<arr[0].length && (Math.abs(arr[i+m][j+n]) == 1)){
+                            temp = temp + 1;
+                        }
+                    }
+                }
+                // 规则 1 或规则 3
+                if ((arr[i][j] == 1) && (temp < 2 || temp > 3)) {
+                    // -1 代表这个细胞过去是活的现在死了
+                    arr[i][j] = -1;
+                }
+                // 规则 4
+                if (arr[i][j] == 0 && temp == 3) {
+                    // 2 代表这个细胞过去是死的现在活了
+                    arr[i][j] = 2;
+                }
+            }
+        }
+        // 遍历 board 得到一次更新后的状态
+        for (int row = 0; row < arr.length; row++) {
+            for (int col = 0; col < arr[0].length; col++) {
+                if (arr[row][col] > 0) {
+                    arr[row][col] = 1;
+                } else {
+                    arr[row][col] = 0;
+                }
+            }
+        }
+        return arr;
     }
 }
