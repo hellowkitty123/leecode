@@ -1,4 +1,7 @@
 package com.leecode.array.twovector.change;
+
+import java.util.Arrays;
+
 /**
  *
  * 566. 重塑矩阵
@@ -41,6 +44,31 @@ package com.leecode.array.twovector.change;
  */
 public class leecode_566 {
     public static void main(String[] args) {
-
+        int[][] arr = {
+                {1,2},
+                {3,4},
+                {5,6},
+                {5,6}
+        };
+        int r = 2;
+        int c = 4;
+        int[][] result = funcOne(arr,r,c);
+        for (int i = 0;i<result.length;i++) {
+            System.out.println(Arrays.toString(result[i]));
+        }
+    }
+    private static int[][] funcOne(int[][] arr,int r,int c){
+        int[][] res = new int[r][c];
+        if (arr.length == 0 || r * c != arr.length*arr[0].length){
+            return arr;
+        }
+        int count =0;
+        for (int[] ints : arr) {
+            for (int anInt : ints) {
+                res[count / c][count % c] = anInt;
+                count++;
+            }
+        }
+        return res;
     }
 }
