@@ -17,7 +17,23 @@ package com.leecode.array.twovector.suffix;
  *
  */
 public class leecode_303 {
+    private static int[] sum;
     public static void main(String[] args) {
+        int[] arr = {-2, 0, 3, -5, 2, -1};
+        sum = preCompute(arr);
+        int result = funcOne(2,5);
+        System.out.println(result);
+    }
 
+    private static int[] preCompute(int[] arr){
+        int[] sum = new int[arr.length+1];
+        sum[0] = 0;
+        for (int i=0;i<arr.length;i++){
+            sum[i+1] = sum[i]+ arr[i];
+        }
+        return sum;
+    }
+    private static int funcOne(int start,int end){
+        return sum[end+1]-sum[start];
     }
 }
