@@ -10,9 +10,35 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>travel_spark</artifactId>
+    <repositories>
+        <repository>
+            <id>maven-ali</id>
+            <url>http://maven.aliyun.com/nexus/content/groups/public//</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+                <checksumPolicy>fail</checksumPolicy>
+            </snapshots>
+        </repository>
 
-
-
+    <repository>
+        <id>osgeo</id>
+        <name>OSGeo Release Repository</name>
+        <url>https://repo.osgeo.org/repository/release/</url>
+        <snapshots><enabled>false</enabled></snapshots>
+        <releases><enabled>true</enabled></releases>
+    </repository>
+    <repository>
+        <id>osgeo-snapshot</id>
+        <name>OSGeo Snapshot Repository</name>
+        <url>https://repo.osgeo.org/repository/snapshot/</url>
+        <snapshots><enabled>true</enabled></snapshots>
+        <releases><enabled>false</enabled></releases>
+    </repository>
+    </repositories>
 <properties>
     <spark.version>2.3.0</spark.version>
     <geotools.version>20.1</geotools.version>
@@ -36,7 +62,7 @@
         <version>1.0.1</version>
     </dependency>
     <dependency>
-        <groupId>com.kkb.travel</groupId>
+        <groupId>org.example</groupId>
         <artifactId>travel_common</artifactId>
         <version>1.0-SNAPSHOT</version>
         <exclusions>
