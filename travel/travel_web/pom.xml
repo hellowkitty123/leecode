@@ -10,7 +10,17 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>travel_web</artifactId>
+
+    <repositories>
+        <repository>
+            <id>cloudera</id>
+            <url>https://repository.cloudera.com/artifactory/cloudera-repos/</url>
+        </repository>
+    </repositories>
 <packaging>jar</packaging>
+
+
+
 <dependencies>
     <dependency>
         <groupId>org.springframework.boot</groupId>

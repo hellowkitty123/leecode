@@ -11,8 +11,12 @@
 
     <artifactId>travel_common</artifactId>
 
-
-
+    <repositories>
+        <repository>
+            <id>cloudera</id>
+            <url>https://repository.cloudera.com/artifactory/cloudera-repos/</url>
+        </repository>
+    </repositories>
 <dependencies>
     <dependency>
         <groupId>commons-configuration</groupId>
