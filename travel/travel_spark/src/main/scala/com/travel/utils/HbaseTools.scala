@@ -40,7 +40,7 @@ object HbaseTools extends Logging with Serializable {
 
   def getHbaseConfiguration(): Configuration = {
     val hconf: Configuration = HBaseConfiguration.create()
-    hconf.set("hbase.zookeeper.quorum", "node01,node02,node03")
+    hconf.set("hbase.zookeeper.quorum", "hadoop002,hadoop003,hadoop004")
     hconf.set("hbase.zookeeper.property.clientPort", "2181")
     hconf.setInt("hbase.client.operation.timeout", 3000)
     hconf
