@@ -4,7 +4,7 @@
 <configuration>
   <property>
     <name>dfs.namenode.name.dir</name>
-    <value>file:///dfs/nn</value>
+    <value>file:///opt/dfs/nn</value>
   </property>
   <property>
     <name>dfs.namenode.servicerpc-address</name>
@@ -12,15 +12,15 @@
   </property>
   <property>
     <name>dfs.https.address</name>
-    <value>hadoop001:50470</value>
+    <value>hadoop001:9871</value>
   </property>
   <property>
     <name>dfs.https.port</name>
-    <value>50470</value>
+    <value>9871</value>
   </property>
   <property>
     <name>dfs.namenode.http-address</name>
-    <value>hadoop001:50070</value>
+    <value>hadoop001:9870</value>
   </property>
   <property>
     <name>dfs.replication</name>
@@ -39,11 +39,23 @@
     <value>022</value>
   </property>
   <property>
-    <name>dfs.namenode.acls.enabled</name>
-    <value>false</value>
+    <name>dfs.client.block.write.locateFollowingBlock.retries</name>
+    <value>7</value>
   </property>
   <property>
-    <name>dfs.client.use.legacy.blockreader</name>
+    <name>dfs.encrypt.data.transfer.algorithm</name>
+    <value>3des</value>
+  </property>
+  <property>
+    <name>dfs.encrypt.data.transfer.cipher.suites</name>
+    <value>AES/CTR/NoPadding</value>
+  </property>
+  <property>
+    <name>dfs.encrypt.data.transfer.cipher.key.bitlength</name>
+    <value>256</value>
+  </property>
+  <property>
+    <name>dfs.namenode.acls.enabled</name>
     <value>false</value>
   </property>
   <property>

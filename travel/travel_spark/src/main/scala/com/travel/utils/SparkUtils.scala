@@ -1,6 +1,7 @@
 package com.travel.utils
 
 import java.util
+import java.util.Base64
 
 import com.alibaba.fastjson.JSONArray
 import com.travel.common.{District, MapUtil}
@@ -8,7 +9,7 @@ import com.uber.h3core.H3Core
 import org.apache.commons.lang3.StringUtils
 import org.apache.hadoop.hbase.client.Scan
 import org.apache.hadoop.hbase.protobuf.ProtobufUtil
-import org.apache.hadoop.hbase.util.Base64
+//import org.apache.hadoop.hbase.util.Base64
 import org.apache.spark.broadcast.Broadcast
 import org.apache.spark.rdd.RDD
 import org.apache.spark.sql.api.java.UDF3
@@ -106,7 +107,8 @@ object SparkUtils {
 
   def convertScanToString(scan: Scan):String = {
     val proto = ProtobufUtil.toScan(scan)
-    Base64.encodeBytes(proto.toByteArray)
+//    Base64.encodeBytes(proto.toByteArray)
+    Base64.getEncoder.encodeToString(proto.toByteArray)
   }
 
 

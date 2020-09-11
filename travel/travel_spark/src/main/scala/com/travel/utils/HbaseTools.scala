@@ -1,6 +1,6 @@
 package com.travel.utils
 
-import java.util.Date
+import java.util.{Base64, Date}
 import java.util.regex.Pattern
 
 import com.travel.bean._
@@ -18,7 +18,7 @@ import org.apache.hadoop.hbase.mapreduce.{TableInputFormat, TableOutputFormat}
 import org.apache.hadoop.hbase.protobuf.ProtobufUtil
 import org.apache.hadoop.hbase.regionserver.BloomType
 import org.apache.hadoop.hbase.util.RegionSplitter.HexStringSplit
-import org.apache.hadoop.hbase.util.{Base64, Bytes, MD5Hash}
+import org.apache.hadoop.hbase.util.{Bytes, MD5Hash}
 import org.apache.hadoop.mapreduce.Job
 import org.apache.kafka.clients.consumer.ConsumerRecord
 import org.apache.kafka.common.TopicPartition
@@ -170,7 +170,8 @@ object HbaseTools extends Logging with Serializable {
   }
   def convertScanToString(scan: Scan):String={
     val proto = ProtobufUtil.toScan(scan)
-    return Base64.encodeBytes(proto.toByteArray)
+//    return Base64.encodeBytes(proto.toByteArray)
+    return Base64.getEncoder.encodeToString(proto.toByteArray)
   }
 
 

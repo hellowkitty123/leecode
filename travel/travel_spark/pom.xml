@@ -240,6 +240,12 @@
      解决2.3.0 spark版本读取hbase 抛出异常
     Exception in thread "dag-scheduler-event-loop" java.lang.NoSuchMethodError: org.apache.hadoop.mapreduce.InputSplit.getLocationInfo()[Lorg/apache/hadoop/mapred/SplitLocationInfo;
      -->
+
+    <dependency>
+        <groupId>org.apache.hbase</groupId>
+        <artifactId>hbase-mapreduce</artifactId>
+        <version>2.1.4</version>
+    </dependency>
     <dependency>
         <groupId>org.apache.hadoop</groupId>
         <artifactId>hadoop-core</artifactId>
