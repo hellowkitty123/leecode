@@ -1,7 +1,6 @@
 package com.travel.programApp
 
 import com.travel.common.{ConfigUtil, Constants}
-import com.travel.utils.HbaseTools
 import com.travel.utils.{HbaseTools, JsonParse}
 import org.apache
 import org.apache.kafka.common.serialization.StringDeserializer

@@ -7,6 +7,10 @@
     <value>hdfs://hadoop001:8020/hbase</value>
   </property>
   <property>
+    <name>hbase.replication</name>
+    <value>true</value>
+  </property>
+  <property>
     <name>hbase.client.write.buffer</name>
     <value>2097152</value>
   </property>
@@ -16,7 +20,7 @@
   </property>
   <property>
     <name>hbase.client.retries.number</name>
-    <value>35</value>
+    <value>10</value>
   </property>
   <property>
     <name>hbase.client.scanner.caching</name>
@@ -39,10 +43,6 @@
     <value>10</value>
   </property>
   <property>
-    <name>hbase.fs.tmp.dir</name>
-    <value>/user/${user.name}/hbase-staging</value>
-  </property>
-  <property>
     <name>hbase.client.scanner.timeout.period</name>
     <value>60000</value>
   </property>
@@ -52,11 +52,15 @@
   </property>
   <property>
     <name>hbase.regionserver.thrift.http</name>
+    <value>true</value>
+  </property>
+  <property>
+    <name>hbase.thrift.ssl.enabled</name>
     <value>false</value>
   </property>
   <property>
     <name>hbase.thrift.support.proxyuser</name>
-    <value>false</value>
+    <value>true</value>
   </property>
   <property>
     <name>hbase.rpc.timeout</name>
@@ -67,16 +71,12 @@
     <value>true</value>
   </property>
   <property>
-    <name>hbase.snapshot.master.timeoutMillis</name>
-    <value>60000</value>
-  </property>
-  <property>
     <name>hbase.snapshot.region.timeout</name>
-    <value>60000</value>
+    <value>300000</value>
   </property>
   <property>
     <name>hbase.snapshot.master.timeout.millis</name>
-    <value>60000</value>
+    <value>300000</value>
   </property>
   <property>
     <name>hbase.security.authentication</name>
@@ -100,7 +100,7 @@
   </property>
   <property>
     <name>hbase.zookeeper.quorum</name>
-    <value>hadoop002,hadoop003,hadoop004</value>
+    <value>hadoop004,hadoop002,hadoop003</value>
   </property>
   <property>
     <name>hbase.zookeeper.property.clientPort</name>

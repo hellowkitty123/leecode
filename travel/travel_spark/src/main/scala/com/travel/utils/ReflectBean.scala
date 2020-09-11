@@ -1,6 +1,7 @@
 package com.travel.utils
 
 import com.travel.loggings.Logging
+import com.travel.util.GlobalConfigUtils
 
 
 /**

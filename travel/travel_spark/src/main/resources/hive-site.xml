@@ -76,7 +76,27 @@
   </property>
   <property>
     <name>hive.vectorized.execution.reduce.enabled</name>
+    <value>true</value>
+  </property>
+  <property>
+    <name>hive.vectorized.use.vectorized.input.format</name>
+    <value>true</value>
+  </property>
+  <property>
+    <name>hive.vectorized.use.checked.expressions</name>
+    <value>true</value>
+  </property>
+  <property>
+    <name>hive.vectorized.use.vector.serde.deserialize</name>
     <value>false</value>
+  </property>
+  <property>
+    <name>hive.vectorized.adaptor.usage.mode</name>
+    <value>chosen</value>
+  </property>
+  <property>
+    <name>hive.vectorized.input.format.excludes</name>
+    <value>org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat</value>
   </property>
   <property>
     <name>hive.merge.mapfiles</name>
@@ -140,23 +160,23 @@
   </property>
   <property>
     <name>spark.executor.memory</name>
-    <value>912680550</value>
+    <value>912680550b</value>
   </property>
   <property>
     <name>spark.driver.memory</name>
-    <value>966367641</value>
+    <value>966367641b</value>
   </property>
   <property>
     <name>spark.executor.cores</name>
-    <value>2</value>
+    <value>4</value>
   </property>
   <property>
     <name>spark.yarn.driver.memoryOverhead</name>
-    <value>102</value>
+    <value>102m</value>
   </property>
   <property>
     <name>spark.yarn.executor.memoryOverhead</name>
-    <value>153</value>
+    <value>153m</value>
   </property>
   <property>
     <name>spark.dynamicAllocation.enabled</name>
@@ -184,7 +204,7 @@
   </property>
   <property>
     <name>hive.zookeeper.quorum</name>
-    <value>node01,node02,node03</value>
+    <value>hadoop004,hadoop002,hadoop003</value>
   </property>
   <property>
     <name>hive.zookeeper.client.port</name>
@@ -196,7 +216,7 @@
   </property>
   <property>
     <name>hbase.zookeeper.quorum</name>
-    <value>node01,node02,node03</value>
+    <value>hadoop004,hadoop002,hadoop003</value>
   </property>
   <property>
     <name>hbase.zookeeper.property.clientPort</name>
@@ -217,5 +237,29 @@
   <property>
     <name>spark.shuffle.service.enabled</name>
     <value>true</value>
+  </property>
+  <property>
+    <name>hive.strict.checks.orderby.no.limit</name>
+    <value>false</value>
+  </property>
+  <property>
+    <name>hive.strict.checks.no.partition.filter</name>
+    <value>false</value>
+  </property>
+  <property>
+    <name>hive.strict.checks.type.safety</name>
+    <value>true</value>
+  </property>
+  <property>
+    <name>hive.strict.checks.cartesian.product</name>
+    <value>false</value>
+  </property>
+  <property>
+    <name>hive.strict.checks.bucketing</name>
+    <value>true</value>
+  </property>
+  <property>
+    <name>hive.exec.post.hooks</name>
+    <value>org.apache.atlas.hive.hook.HiveHook,org.apache.hadoop.hive.ql.hooks.LineageLogger</value>
   </property>
 </configuration>

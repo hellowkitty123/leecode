@@ -1,4 +1,4 @@
-package com.travel.utils
+package com.travel.util
 
 import com.typesafe.config.ConfigFactory
 

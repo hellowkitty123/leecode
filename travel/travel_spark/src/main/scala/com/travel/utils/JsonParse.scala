@@ -2,6 +2,7 @@ package com.travel.utils
 
 import com.alibaba.fastjson.{JSON, JSONObject}
 import com.travel.bean.{DriverInfo, Opt_alliance_business, OrderInfo, RegisterUsers}
+import com.travel.util.GlobalConfigUtils
 
 
 /**

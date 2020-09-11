@@ -1,4 +1,4 @@
-package com.travel.utils
+package com.travel.util
 
 import java.util
 import java.util.Properties

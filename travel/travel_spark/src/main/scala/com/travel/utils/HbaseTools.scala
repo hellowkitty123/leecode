@@ -6,6 +6,7 @@ import java.util.regex.Pattern
 import com.travel.bean._
 import com.travel.common._
 import com.travel.loggings.Logging
+import com.travel.util.GlobalConfigUtils
 import org.apache.hadoop.conf.Configuration
 import org.apache.hadoop.fs.permission.{FsAction, FsPermission}
 import org.apache.hadoop.fs.{FileSystem, Path}
