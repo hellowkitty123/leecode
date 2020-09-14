@@ -28,7 +28,7 @@ public class HBaseUtil {
 //            conf.set("hbase.zookeeper.quorum", "10.20.3.177,10.20.3.178,10.20.3.179");
 //            conf.set("hbase.zookeeper.quorum", "117.51.141.24,117.51.142.225");
            // System.out.println(ConfigUtil.getConfig("hbase_connect"));
-            conf.set("hbase.zookeeper.quorum", "node01,node02,node03");
+            conf.set("hbase.zookeeper.quorum", "hadoop002,hadoop003,hadoop004");
             conf.set("hbase.zookeeper.property.clientPort", "2181");
             connection = ConnectionFactory.createConnection(conf);
         }
