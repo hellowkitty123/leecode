@@ -10,7 +10,7 @@ import org.apache.spark.sql.sources.v2.reader.{DataReader, DataReaderFactory, Da
 import org.apache.spark.sql.sources.v2.writer.{DataSourceWriter, DataWriter, DataWriterFactory, WriterCommitMessage}
 import org.apache.spark.sql.sources.v2.{DataSourceOptions, DataSourceV2, ReadSupport, WriteSupport}
 import org.apache.spark.sql.types.StructType
-import org.apache.spark.sql.{Row, SaveMode, SparkSession}
+import org.apache.spark.sql.{DataFrame, Row, SaveMode, SparkSession}
 
 object HbaseSourceAndSink {
   def main(args: Array[String]): Unit = {
@@ -25,7 +25,8 @@ object HbaseSourceAndSink {
     frame.explain(true)
     frame.show()
     frame.createOrReplaceTempView("sparkHbaseSql")
-    val frame1 = session.sql(" select * from sparkHbaseSql where score > 60")
+    val frame2: DataFrame = session.sql(" select * from sparkHbaseSql where score > 60")
+    val frame1 = frame2
     frame1.show()
 
     frame.write.format("com.travel.programApp.HBaseSink")
