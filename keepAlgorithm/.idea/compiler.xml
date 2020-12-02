@@ -6,7 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="keepAlgorith" />
+        <module name="leetcode-top" />
+        <module name="training003" />
+        <module name="algorithm" />
+        <module name="training001" />
+        <module name="training002" />
       </profile>
     </annotationProcessing>
   </component>
