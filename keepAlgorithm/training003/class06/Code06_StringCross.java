@@ -30,7 +30,7 @@ public class Code06_StringCross {
 			for (int j = 1; j <= str2.length; j++) {
 				
 				if (
-						
+						// 新增加的一个字母和是str1中字母，剩下的就看原来
 						(str1[i - 1] == aim[i + j - 1] && dp[i - 1][j])
 						
 						|| 

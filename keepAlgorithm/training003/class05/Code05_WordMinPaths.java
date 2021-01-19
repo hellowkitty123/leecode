@@ -93,7 +93,7 @@ public class Code05_WordMinPaths {
 		} else {
 			for (String next : nexts.get(cur)) {
 				if (distances.get(next) == distances.get(cur) + 1) {
-					getShortestPaths(next, to, nexts, distances, path, res);
+
 				}
 			}
 		}

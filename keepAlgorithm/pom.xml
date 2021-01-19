@@ -14,7 +14,22 @@
         <module>training002</module>
         <module>training003</module>
         <module>leetcode-top</module>
+        <module>training004</module>
+        <module>training005</module>
     </modules>
+    <repositories>
+        <repository>
+            <id>PentahoOmni</id>
+            <url>https://nexus.pentaho.org/content/groups/omni/</url>
+        </repository>
+    </repositories>
+    <dependencies>
+        <dependency>
+            <groupId>pentaho</groupId>
+            <artifactId>pentaho-cwm</artifactId>
+            <version>1.5.4</version>
+        </dependency>
+    </dependencies>
     <build>
         <plugins>
             <plugin>

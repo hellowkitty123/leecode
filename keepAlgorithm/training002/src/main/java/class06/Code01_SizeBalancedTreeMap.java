@@ -124,7 +124,7 @@ public class Code01_SizeBalancedTreeMap {
 		// 现在，以cur为头的树上，新增，加(key, value)这样的记录
 		// 加完之后，会对cur做检查，该调整调整
 		// 返回，调整完之后，整棵树的新头部
-		private SBTNode<K, V> add(SBTNode<K, V> cur, K key, V value) {
+		private SBTNode<K, V>   add(SBTNode<K, V> cur, K key, V value) {
 			if (cur == null) {
 				return new SBTNode<K, V>(key, value);
 			} else {
