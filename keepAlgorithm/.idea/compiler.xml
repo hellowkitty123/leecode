@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="algorithm" />
+        <module name="BinaryTreePrinter" />
         <module name="leetcode-top" />
         <module name="training005" />
         <module name="training004" />

@@ -16,6 +16,7 @@
         <module>leetcode-top</module>
         <module>training004</module>
         <module>training005</module>
+        <module>BinaryTreePrinter</module>
     </modules>
     <repositories>
         <repository>
@@ -29,6 +30,18 @@
             <artifactId>pentaho-cwm</artifactId>
             <version>1.5.4</version>
         </dependency>
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>BinaryTreePrinter</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>BinaryTreePrinter</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
@@ -36,8 +49,8 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
+                    <source>8</source>
+                    <target>8</target>
                 </configuration>
             </plugin>
         </plugins>
