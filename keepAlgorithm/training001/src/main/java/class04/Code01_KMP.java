@@ -40,8 +40,10 @@ public class Code01_KMP {
 		while (i < next.length) {
 			if (match[i - 1] == match[cn]) { // 跳出来的时候
 				next[i++] = ++cn;
+				// 跳出失败了，还能往前跳
 			} else if (cn > 0) {
 				cn = next[cn];
+				// 不能往前跳了， 0
 			} else {
 				next[i++] = 0;
 			}

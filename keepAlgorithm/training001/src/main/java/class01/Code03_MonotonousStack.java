@@ -152,9 +152,10 @@ public class Code03_MonotonousStack {
 	public static void main(String[] args) {
 		int size = 10;
 		int max = 20;
-		int testTimes = 2000000;
+		int testTimes = 1;
 		for (int i = 0; i < testTimes; i++) {
 			int[] arr1 = getRandomArrayNoRepeat(size);
+			arr1 = new int[]{1, 2, 7, 0, 8, 5, 3, 6, 4};
 			int[] arr2 = getRandomArray(size, max);
 			if (!isEqual(getNearLessNoRepeat(arr1), rightWay(arr1))) {
 				System.out.println("Oops!");

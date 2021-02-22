@@ -88,7 +88,7 @@ public class Code09_NQueens {
 	}
 
 	public static void main(String[] args) {
-		int n = 15;
+		int n = 8;
 
 		long start = System.currentTimeMillis();
 		System.out.println(num2(n));

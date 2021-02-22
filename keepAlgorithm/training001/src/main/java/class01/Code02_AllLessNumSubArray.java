@@ -76,6 +76,7 @@ public class Code02_AllLessNumSubArray {
 
 	public static void main(String[] args) {
 		int[] arr = getRandomArray(30);
+		arr = new int[]{2, 6, 0, 9, 6, 3, 6, 8, 5, 0, 1, 5, 5, 3, 2, 3, 8, 0, 8, 5, 9, 6, 6, 3, 8, 6, 0, 6, 5, 9 };
 		int num = 5;
 		printArray(arr);
 		System.out.println(getNum(arr, num));
